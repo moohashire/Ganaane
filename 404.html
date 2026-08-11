@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | Ganaane.com</title>
+    <meta
+      name="description"
+      content="This page doesn't exist. Head back to Ganaane."
+    />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" content="#0F1310" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f1310;
+        --panel: #161c17;
+        --line: #263029;
+        --text: #edefea;
+        --muted: #8a9289;
+        --gold: #d4a94a;
+        --green: #7fe0a6;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+
+      #growth {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.4;
+      }
+
+      .wrap {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 6vh 6vw;
+      }
+
+      .eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6em;
+        margin-bottom: 2.2rem;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-size: clamp(4rem, 16vw, 9rem);
+        line-height: 0.9;
+        letter-spacing: -0.01em;
+        color: var(--text);
+      }
+
+      h1 span {
+        color: var(--gold);
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .message {
+        margin-top: 1.4rem;
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+        color: var(--muted);
+        max-width: 34ch;
+      }
+
+      .divider {
+        width: 1px;
+        height: 48px;
+        background: linear-gradient(var(--line), transparent);
+        margin: 3rem 0 2.4rem;
+      }
+
+      a.home-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        background: var(--green);
+        color: #0f1310;
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.85rem 1.6rem;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      a.home-link:hover {
+        background: var(--gold);
+        transform: translateY(-1px);
+      }
+      a.home-link:active {
+        transform: translateY(0);
+      }
+
+      footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.6rem 6vw 2rem;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+      }
+
+      footer a {
+        color: var(--muted);
+        text-decoration: none;
+        margin-left: 1.4rem;
+        transition: color 0.2s ease;
+      }
+
+      footer a:hover {
+        color: var(--green);
+      }
+
+      .footer-links {
+        display: flex;
+      }
+
+      @media (max-width: 520px) {
+        footer {
+          flex-direction: column;
+          gap: 0.8rem;
+          text-align: center;
+        }
+        footer a {
+          margin: 0 0.6rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #growth {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="growth"></canvas>
+
+    <main class="wrap">
+      <span class="eyebrow">Error 404</span>
+      <h1>Lost<span>.</span></h1>
+      <p class="message">
+        This path hasn't grown in yet. Let's get you back to solid ground.
+      </p>
+
+      <div class="divider"></div>
+
+      <a class="home-link" href="/">&larr; Back to Ganaane.con</a>
+    </main>
+
+    <footer>
+      <span>&copy; <span id="year"></span> Ganaane.com</span>
+      <div class="footer-links">
+        <a href="mailto:ganaanedigital@gmail.com">Email</a>
+        <a
+          href="https://facebook.com/ganaanedigital"
+          target="_blank"
+          rel="noopener"
+          >Facebook</a
+        >
+        <a
+          href="https://twitter.com/ganaanedigital"
+          target="_blank"
+          rel="noopener"
+          >Twitter</a
+        >
+        <a
+          href="https://instagram.com/ganaanedigital"
+          target="_blank"
+          rel="noopener"
+          >Instagram</a
+        >
+        <a
+          href="https://linkedin.com/company/ganaanedigital"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const canvas = document.getElementById("growth");
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!prefersReduced && canvas) {
+        const ctx = canvas.getContext("2d");
+        let w, h, dpr;
+
+        function resize() {
+          dpr = Math.min(window.devicePixelRatio || 1, 2);
+          w = canvas.width = window.innerWidth * dpr;
+          h = canvas.height = window.innerHeight * dpr;
+          canvas.style.width = window.innerWidth + "px";
+          canvas.style.height = window.innerHeight + "px";
+        }
+        resize();
+        window.addEventListener("resize", resize);
+
+        const nodes = [];
+        const rootCount = 2;
+        const maxDepth = 4;
+
+        function grow(x, y, angle, depth, spread) {
+          if (depth > maxDepth) return;
+          const len = (80 - depth * 12) * dpr * (0.6 + Math.random() * 0.5);
+          const nx = x + Math.cos(angle) * len;
+          const ny = y + Math.sin(angle) * len;
+          nodes.push({
+            x1: x,
+            y1: y,
+            x2: nx,
+            y2: ny,
+            depth,
+            born: Math.random() * 1.2,
+          });
+
+          const branches = depth < 2 ? 2 : Math.random() > 0.5 ? 2 : 1;
+          for (let i = 0; i < branches; i++) {
+            const a = angle + (Math.random() - 0.5) * spread;
+            grow(nx, ny, a, depth + 1, spread * 0.9);
+          }
+        }
+
+        for (let i = 0; i < rootCount; i++) {
+          const startX = w * (0.15 + Math.random() * 0.7);
+          const startY = h * (0.35 + Math.random() * 0.4);
+          const baseAngle = Math.random() * Math.PI * 2;
+          grow(startX, startY, baseAngle, 0, 1.1);
+        }
+
+        let start = null;
+        const totalDuration = 2200;
+
+        function draw(ts) {
+          if (!start) start = ts;
+          const elapsed = ts - start;
+          ctx.clearRect(0, 0, w, h);
+
+          nodes.forEach((n) => {
+            const nodeStart = n.born * 800;
+            const progress = Math.max(
+              0,
+              Math.min(1, (elapsed - nodeStart) / 650),
+            );
+            if (progress <= 0) return;
+
+            const cx = n.x1 + (n.x2 - n.x1) * progress;
+            const cy = n.y1 + (n.y2 - n.y1) * progress;
+
+            const alpha = 0.13 - n.depth * 0.02;
+            ctx.strokeStyle = `rgba(212, 169, 74, ${Math.max(alpha, 0.03)})`;
+            ctx.lineWidth = Math.max(1.4 - n.depth * 0.18, 0.4) * dpr;
+            ctx.beginPath();
+            ctx.moveTo(n.x1, n.y1);
+            ctx.lineTo(cx, cy);
+            ctx.stroke();
+          });
+
+          if (elapsed < totalDuration + 700) {
+            requestAnimationFrame(draw);
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+    </script>
+  </body>
+</html>
